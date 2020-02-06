@@ -28,4 +28,4 @@ instance showOptional :: Show (Optional String) where
 getVar :: String -> Aff String
 getVar s = do
   m <- liftEffect $ Process.lookupEnv s
-  pure $ show $ wrap m :: Optional String
+  pure $ show (wrap m :: Optional String)
